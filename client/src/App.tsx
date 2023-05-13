@@ -1,10 +1,21 @@
-import { Home } from "./pages"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
+import { Home, TipCalculator, Error, CaloriesCalculator } from "./pages"
+import { Navbar } from "./components"
 
 const App = () => {
     return (
-        <>
-            <Home />
-        </>
+        <div className="font-wix bg-[#fffdf7] h-screen">
+            <Router>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/tip-calculator" element={<TipCalculator />} />
+                    <Route path="/calories-calculator" element={<CaloriesCalculator />} />
+                    <Route path="*" element={<Error />} />
+                </Routes>
+            </Router>
+        </div>
     )
 }
 
