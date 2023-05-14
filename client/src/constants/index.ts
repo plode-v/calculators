@@ -12,7 +12,7 @@ export const currencies = {
     "TRY ₺": "₺",
     "AZN ₼": "₼",
     "KZT ₸": "₸",
-    "THB": "฿",
+    "THB ฿": "฿",
     "KRW ₩": "₩",
     "VND ₫": "₫",
     "MNT ₮": "₮",

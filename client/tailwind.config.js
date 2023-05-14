@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily: {
         wix: ['Wix Madefor Display', 'sans-serif']
+      },
+      screens: {
+        "3xl": "2200px"
       }
     },
   },

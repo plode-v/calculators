@@ -1,4 +1,4 @@
-const Input = ({label, placeholder, value, type, onChange, inputStyle, divStyle, labelStyle} :any) => {
+const Input = ({label, placeholder, value, type, onChange, inputStyle, divStyle, labelStyle, min} :any) => {
     return (
         <div className={divStyle}>
             <label className={labelStyle}>{label}</label>
@@ -8,6 +8,7 @@ const Input = ({label, placeholder, value, type, onChange, inputStyle, divStyle,
                 value={value} 
                 onChange={onChange} 
                 className={inputStyle}
+                min={min}
             />
         </div>
     )
