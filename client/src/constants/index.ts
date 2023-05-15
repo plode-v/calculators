@@ -27,3 +27,12 @@ export const currencyNames = [
     "Yuan",
 
 ]
+
+export const activityLevel = [
+    "BMR",
+    "Sedentary",
+    "Lightly Active",
+    "Moderately Active",
+    "Active",
+    "Very Active"
+]

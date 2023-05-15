@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Input } from "../components"
+import { CustomInput } from "../components"
 
 const TipCalculator = () => {
 
@@ -35,7 +35,7 @@ const TipCalculator = () => {
     }
 
     const calculatePerPerson = (): string => {
-        const perPerson = bill !== undefined ? bill / people : NaN;
+        const perPerson = bill !== undefined ? parseFloat(calculateTotalAmount()) / people : NaN;
         return isNaN(perPerson) ? "" : ((perPerson).toFixed(2)).toString();
     }
 
@@ -46,7 +46,7 @@ const TipCalculator = () => {
                     <h1 className="text-[24px] font-[600]">Tip Calculator</h1>
                 </div>
                 <div className="items-center justify-center flex flex-col">
-                    <Input 
+                    <CustomInput 
                         label="Total Bill"
                         type="number"
                         placeholder="100"
@@ -57,7 +57,7 @@ const TipCalculator = () => {
                         inputStyle="border focus:outline-none"
                         min="0"
                     />
-                    <Input 
+                    <CustomInput 
                         label="Tip Percentage"
                         type="number"
                         placeholder="15%"
@@ -68,7 +68,7 @@ const TipCalculator = () => {
                         inputStyle="border focus:outline-none"
                         min="0"
                     />
-                    <Input 
+                    <CustomInput 
                         label="People"
                         type="number"
                         placeholder="1"

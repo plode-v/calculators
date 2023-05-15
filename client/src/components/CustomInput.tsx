@@ -1,4 +1,4 @@
-const Input = ({label, placeholder, value, type, onChange, inputStyle, divStyle, labelStyle, min} :any) => {
+const CustomInput = ({label, placeholder, value, type, onChange, inputStyle, divStyle, labelStyle, min, step} :any) => {
     return (
         <div className={divStyle}>
             <label className={labelStyle}>{label}</label>
@@ -9,9 +9,11 @@ const Input = ({label, placeholder, value, type, onChange, inputStyle, divStyle,
                 onChange={onChange} 
                 className={inputStyle}
                 min={min}
+                required
+                step={step}
             />
         </div>
     )
 }
 
-export default Input
+export default CustomInput
