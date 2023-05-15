@@ -50,8 +50,8 @@ const CaloriesCalculator = () => {
     }
 
     return (
-        <div className="border border-black h-[90vh] flex items-center justify-center">
-            <div className="w-1/2 h-max border rounded-lg shadow-lg shadow-slate-400">
+        <div className="h-[90%] flex items-center justify-center">
+            <div className="w-1/2 h-max border rounded-lg shadow-lg shadow-gray-300">
                 <h1 className="flex justify-center py-10 text-[24px] font-[600]">Calories Calculator</h1>
 
                 {calculate && (

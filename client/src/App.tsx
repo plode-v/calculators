@@ -5,7 +5,7 @@ import { Navbar } from "./components"
 
 const App = () => {
     return (
-        <div className="font-wix bg-[#fffdf7] h-screen">
+        <div className="font-wix bg-[#323643] h-screen">
             <Router>
                 <Navbar />
                 <Routes>
