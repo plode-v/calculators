@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { CustomInput } from "../components"
+import { CustomInput, AnimatedPage } from "../components"
 
 const TipCalculator = () => {
 
@@ -40,53 +40,55 @@ const TipCalculator = () => {
     }
 
     return (
-        <div className="flex items-center justify-center w-full h-[80vh] lg:h-[90vh]">
-            <div className="md:w-1/2 3xl:w-1/4 w-3/4 justify-center flex flex-col">
-                <div className="flex items-center justify-center pt-8 pb-[70px]">
-                    <h1 className="text-[24px] font-[600] text-white">Tip Calculator</h1>
-                </div>
-                <div className="items-center justify-center flex flex-col text-white">
-                    <CustomInput 
-                        label="Total Bill"
-                        type="number"
-                        placeholder="100"
-                        value={bill}
-                        onChange={handleBillChange}
-                        divStyle="grid w-max lg:w-1/2 pb-5"
-                        labelStyle="font-[500] mb-1"
-                        inputStyle="border focus:outline-none text-black rounded-md px-2"
-                        min="0"
-                    />
-                    <CustomInput 
-                        label="Tip Percentage"
-                        type="number"
-                        placeholder="15%"
-                        value={tipPercentage}
-                        onChange={handleTipChange}
-                        divStyle="grid w-max lg:w-1/2 pb-5"
-                        labelStyle="font-[500] mb-1"
-                        inputStyle="border focus:outline-none text-black rounded-md px-2"
-                        min="0"
-                    />
-                    <CustomInput 
-                        label="People"
-                        type="number"
-                        placeholder="1"
-                        value={people}
-                        onChange={handleSplit}
-                        divStyle="grid w-max lg:w-1/2 pb-5"
-                        labelStyle="font-[500] mb-1"
-                        inputStyle="border focus:outline-none text-black rounded-md px-2"
-                        min="1"
-                    />
-                </div>
-                <div className="flex flex-col items-center py-10 text-white">
-                    <p className="py-1">Tip Tip: <strong>{calculateTipAmount()}</strong></p>
-                    <p className="py-1">Total Amount: <strong>{calculateTotalAmount()}</strong></p>
-                    <p className="py-1">Total Per Person: <strong>{calculatePerPerson()}</strong></p>
+        <AnimatedPage>
+            <div className="slide-in flex items-center justify-center w-full h-[80vh] lg:h-[90vh]">
+                <div className="md:w-1/2 3xl:w-1/4 w-3/4 justify-center flex flex-col">
+                    <div className="flex items-center justify-center pt-8 pb-[70px]">
+                        <h1 className="text-[24px] font-[600] text-white">Tip Calculator</h1>
+                    </div>
+                    <div className="items-center justify-center flex flex-col text-white">
+                        <CustomInput 
+                            label="Total Bill"
+                            type="number"
+                            placeholder="100"
+                            value={bill}
+                            onChange={handleBillChange}
+                            divStyle="grid w-max lg:w-1/2 pb-5"
+                            labelStyle="font-[500] mb-1"
+                            inputStyle="border focus:outline-none text-black rounded-md px-2"
+                            min="0"
+                        />
+                        <CustomInput 
+                            label="Tip Percentage"
+                            type="number"
+                            placeholder="15%"
+                            value={tipPercentage}
+                            onChange={handleTipChange}
+                            divStyle="grid w-max lg:w-1/2 pb-5"
+                            labelStyle="font-[500] mb-1"
+                            inputStyle="border focus:outline-none text-black rounded-md px-2"
+                            min="0"
+                        />
+                        <CustomInput 
+                            label="People"
+                            type="number"
+                            placeholder="1"
+                            value={people}
+                            onChange={handleSplit}
+                            divStyle="grid w-max lg:w-1/2 pb-5"
+                            labelStyle="font-[500] mb-1"
+                            inputStyle="border focus:outline-none text-black rounded-md px-2"
+                            min="1"
+                        />
+                    </div>
+                    <div className="flex flex-col items-center py-10 text-white">
+                        <p className="py-1">Tip Tip: <strong>{calculateTipAmount()}</strong></p>
+                        <p className="py-1">Total Amount: <strong>{calculateTotalAmount()}</strong></p>
+                        <p className="py-1">Total Per Person: <strong>{calculatePerPerson()}</strong></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </AnimatedPage>
     )
 }
 

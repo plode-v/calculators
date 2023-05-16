@@ -28,11 +28,3 @@ export const currencyNames = [
 
 ]
 
-export const activityLevel = [
-    "BMR",
-    "Sedentary",
-    "Lightly Active",
-    "Moderately Active",
-    "Active",
-    "Very Active"
-]
