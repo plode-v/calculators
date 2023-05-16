@@ -1,8 +1,9 @@
-import React from 'react'
-
-const CaloriesResult = () => {
+const CaloriesResult = ({ state, calories, divStyle, h2Style, pStyle }: any) => {
     return (
-        <div>CaloriesResult</div>
+        <div className={divStyle}>
+            <h2 className={h2Style}>{state}</h2>
+            <p className={pStyle}>{calories} Calories</p>
+        </div>
     )
 }
 

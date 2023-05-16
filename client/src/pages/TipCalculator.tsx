@@ -21,7 +21,7 @@ const TipCalculator = () => {
 
     const calculateTipAmount = (): string => {
         if (bill === undefined || tipPercentage === undefined) {
-            return "";
+            return "N/A";
         }
 
         const tipAmount = (bill * tipPercentage) / 100;
@@ -31,21 +31,21 @@ const TipCalculator = () => {
     
     const calculateTotalAmount = (): string => {
         const totalAmount = bill !== undefined && tipPercentage !== undefined ? bill + parseFloat(calculateTipAmount()) : NaN;
-        return isNaN(totalAmount) ? "" : (totalAmount).toFixed(2);
+        return isNaN(totalAmount) ? "N/A" : (totalAmount).toFixed(2);
     }
 
     const calculatePerPerson = (): string => {
         const perPerson = bill !== undefined ? parseFloat(calculateTotalAmount()) / people : NaN;
-        return isNaN(perPerson) ? "" : ((perPerson).toFixed(2)).toString();
+        return isNaN(perPerson) ? "N/A" : ((perPerson).toFixed(2)).toString();
     }
 
     return (
         <div className="flex items-center justify-center w-full h-[80vh] lg:h-[90vh]">
-            <div className="md:w-1/2 3xl:w-1/4 w-3/4 justify-center flex flex-col shadow-[10px_10px_20px_-12px_grey] border">
+            <div className="md:w-1/2 3xl:w-1/4 w-3/4 justify-center flex flex-col">
                 <div className="flex items-center justify-center pt-8 pb-[70px]">
-                    <h1 className="text-[24px] font-[600]">Tip Calculator</h1>
+                    <h1 className="text-[24px] font-[600] text-white">Tip Calculator</h1>
                 </div>
-                <div className="items-center justify-center flex flex-col">
+                <div className="items-center justify-center flex flex-col text-white">
                     <CustomInput 
                         label="Total Bill"
                         type="number"
@@ -54,7 +54,7 @@ const TipCalculator = () => {
                         onChange={handleBillChange}
                         divStyle="grid w-max lg:w-1/2 pb-5"
                         labelStyle="font-[500] mb-1"
-                        inputStyle="border focus:outline-none"
+                        inputStyle="border focus:outline-none text-black rounded-md px-2"
                         min="0"
                     />
                     <CustomInput 
@@ -65,7 +65,7 @@ const TipCalculator = () => {
                         onChange={handleTipChange}
                         divStyle="grid w-max lg:w-1/2 pb-5"
                         labelStyle="font-[500] mb-1"
-                        inputStyle="border focus:outline-none"
+                        inputStyle="border focus:outline-none text-black rounded-md px-2"
                         min="0"
                     />
                     <CustomInput 
@@ -76,11 +76,11 @@ const TipCalculator = () => {
                         onChange={handleSplit}
                         divStyle="grid w-max lg:w-1/2 pb-5"
                         labelStyle="font-[500] mb-1"
-                        inputStyle="border focus:outline-none"
+                        inputStyle="border focus:outline-none text-black rounded-md px-2"
                         min="1"
                     />
                 </div>
-                <div className="flex flex-col items-center py-10">
+                <div className="flex flex-col items-center py-10 text-white">
                     <p className="py-1">Tip Tip: <strong>{calculateTipAmount()}</strong></p>
                     <p className="py-1">Total Amount: <strong>{calculateTotalAmount()}</strong></p>
                     <p className="py-1">Total Per Person: <strong>{calculatePerPerson()}</strong></p>
