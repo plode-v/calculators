@@ -1,5 +1,7 @@
 import { useState } from "react"
-import { CustomInput, AnimatedPage } from "../components"
+import { CustomInput } from "../components"
+import { motionContainer, motionItem } from "../constants";
+import { motion } from "framer-motion";
 
 const TipCalculator = () => {
 
@@ -40,11 +42,15 @@ const TipCalculator = () => {
     }
 
     return (
-        <AnimatedPage>
-            <div className="slide-in flex items-center justify-center w-full h-[80vh] lg:h-[90vh]">
+        <motion.div
+            variants={motionContainer}
+            initial="hidden"
+            animate="show"
+        >
+            <motion.div variants={motionItem} className="flex items-center justify-center w-full h-max">
                 <div className="md:w-1/2 3xl:w-1/4 w-3/4 justify-center flex flex-col">
-                    <div className="flex items-center justify-center pt-8 pb-[70px]">
-                        <h1 className="text-[24px] font-[600] text-white">Tip Calculator</h1>
+                    <div className="flex items-center justify-center py-8">
+                        <h1 className="text-[30px] font-[600] text-white">Tip Calculator</h1>
                     </div>
                     <div className="items-center justify-center flex flex-col text-white">
                         <CustomInput 
@@ -87,8 +93,8 @@ const TipCalculator = () => {
                         <p className="py-1">Total Per Person: <strong>{calculatePerPerson()}</strong></p>
                     </div>
                 </div>
-            </div>
-        </AnimatedPage>
+            </motion.div>
+        </motion.div>
     )
 }
 
