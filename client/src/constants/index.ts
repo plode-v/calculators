@@ -56,3 +56,17 @@ export const motionItem = {
         }
     }
 }
+
+export const activityLevels = {
+    "Sedentary:": "Little to no exercise",
+    "Lightly Active:": "exercise 1-3 times/week",
+    "Moderately Active:": "exercise 4-5 times/week",
+    "Active:": "exercise daily or intense exercise 3-4 times/week",
+    "Very Active": "intense exercise 6-7 times/week",
+    "BMR:": "Besal Metabolic Rate"
+}
+
+export const workoutLevels = {
+    "Exercise:": "15-30 minutes of elevated heart rate activity.",
+    "Intense exercise:": "45-120 minutes of elevated heart rate activity."
+}

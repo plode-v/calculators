@@ -41,13 +41,27 @@ const TipCalculator = () => {
         return isNaN(perPerson) ? "N/A" : ((perPerson).toFixed(2)).toString();
     }
 
+    const variants = {
+        hidden: {
+            opacity: 0,
+            y: -50
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.3
+            }
+        }
+    }
+
     return (
         <motion.div
-            variants={motionContainer}
+            variants={variants}
             initial="hidden"
             animate="show"
         >
-            <motion.div variants={motionItem} className="flex items-center justify-center w-full h-max">
+            <motion.div className="flex items-center justify-center w-full h-max">
                 <div className="md:w-1/2 3xl:w-1/4 w-3/4 justify-center flex flex-col">
                     <div className="flex items-center justify-center py-8">
                         <h1 className="text-[30px] font-[600] text-white">Tip Calculator</h1>

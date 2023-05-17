@@ -1,10 +1,24 @@
 import { Link } from "react-router-dom";
-import { AnimatedNav } from ".";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
+
+    const variants = {
+        initial: {
+            opacity: 0,
+            y: "-100vh"
+        },
+        animate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.2
+            }
+        }
+    }
+
     return (
-        <AnimatedNav>
-            <nav className="bg-[#323643] w-full flex h-[70px] text-[#F7F7F7] items-center px-5 justify-between">
+            <motion.nav variants={variants} className="z-20 bg-[#323643] w-full flex h-[70px] text-[#F7F7F7] items-center px-5 justify-between">
                 <Link to="/" >
                     <h1 className="font-[700] text-[24px]">Calculators</h1>
                 </Link>
@@ -16,8 +30,7 @@ const Navbar = () => {
                         <li>Calories Calculator</li>
                     </Link>
                 </ul>
-            </nav>
-        </AnimatedNav>
+            </motion.nav>
     )
 }
 
