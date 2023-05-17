@@ -1,16 +1,28 @@
-import { RiBillFill } from "react-icons/ri"
-import { HomeIcon, AnimatedPage } from "../components"
+import { motionContainer, motionItem } from "../constants"
+import { motion } from "framer-motion"
 
 
 const Home = () => {
+
     return (
-        <AnimatedPage>
-            <div className="h-[90vh] flex justify-center items-center">
-                <div className="flex w-1/3 flex-wrap gap-5 justify-between">
-                    <RiBillFill className="text-[100px] text-slate-500" href="" />
+        <motion.div variants={motionContainer} initial="hidden" animate="show">
+            <motion.div variants={motionItem} className="flex justify-center mt-[10%]">
+                <div className="flex flex-wrap gap-10 justify-center text-white">
+                    <div>
+                        <h1 className="text-[24px]">Financial Calculators</h1>
+                        <ul>
+                            <li>Tip Calculator</li>
+                            <li>Loan Calculator</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h1>
+                            Fitness Calculators
+                        </h1>
+                    </div>
                 </div>
-            </div>
-        </AnimatedPage>
+            </motion.div>
+        </motion.div>
     )
 }
 

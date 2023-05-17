@@ -172,7 +172,7 @@ const CaloriesCalculator = () => {
                         </motion.button>
                     </motion.form>
                 </motion.div>
-                {calculate && (
+                {calculate && calories !== null && (
                     <motion.div className="lg:w-1/4 3xl:w-1/6 w-[90%] text-white h-max py-5 bg-[#323643] rounded-lg lg:mt-5"
                         variants={{
                             hidden: { opacity: 0, x: -100 },
